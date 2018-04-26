@@ -1,0 +1,17 @@
+exercism/*
+!exercism/**/
+
+exercism/java/*
+!exercism/java/**/
+
+exercism/java/*/*
+!exercism/java/**/src/
+
+exercism/java/*/src/*
+!exercism/java/**/src/main/
+
+exercism/java/*/src/main/*
+!exercism/java/**/src/main/java/
+
+exercism/java/*/src/main/java/*
+!exercism/java/**/src/main/java/*.java
