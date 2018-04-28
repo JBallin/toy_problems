@@ -1,0 +1,59 @@
+<!--
+	A form that has the following fields:
+	Email
+	Password
+	Github Username
+	Radio buttons with the following options: Enterprise, Pro, Free
+	A checkbox with the words "Remember Me" next to it.
+	Push your code up to Github and then paste the URL to your repository below.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign-Up Page</title>
+</head>
+<body>
+	
+	<h2>User Registration</h2>
+
+	<form>
+		<fieldset>
+			<legend>Account Info</legend>
+			<label>Email<br>
+				<input type="email" name="Email" placeholder="larry@google.com" required> 
+			</label>
+			<br><br>
+			<label>Password<br>
+				<input type="password" name="Pwd" placeholder="1234" required>
+			</label>
+			<br><br>
+			<label>Github Username<br>
+				<input type="text" name="git_usr" placeholder="SirHaxAlot" required>
+			</label>
+		</fieldset>
+		<br>
+		<fieldset>
+			<legend>Select Plan</legend>
+			<input type="radio" name="plan" id="plan1" value="enterprise" value="enterprise" required>
+			<label for="plan2">Enterprise</label>
+			<br>
+
+				<input type="radio" name="plan" id="plan2" value="pro" required>
+				<label for="plan2">Pro</label>
+				<br>
+
+				<input type="radio" name="plan" id="plan3" value="free" required>
+				<label for="plan3">Free</label>
+
+		</fieldset>
+			<br>
+		
+		<input type="checkbox" id="remember" name="remember" value="remember">
+		<label for="remember">Remember Me</label>
+		<br><br>
+		<input type="submit" value="Submit">
+	</form>
+	
+</body>
+</html>
