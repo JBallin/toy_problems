@@ -7,19 +7,20 @@ My Answer: https://stackoverflow.com/a/50826104/4722345
 */
 
 function censor() {
-  let switches = [];
+  const switches = [];
 
-  return function(...args) {
-    if (args.length === 2) {
-      switches.push(args);
+  return (target, replacement) => {
+
+    if (replacement) {
+      switches.push([target, replacement]);
     } else {
-      let str = args[0];
-      switches.forEach(pair => {
-        str = str.replace(pair[0], pair[1])
-      })
-      return str;
+      return switches.reduce((s, [trgt, rplc]) => {
+      let reTrgt = new RegExp(`\\b${trgt}\\b`, 'gi');
+      return s.replace(reTrgt, rplc);
+      }, target);
     }
-  }
+
+  };
 }
 
 // TEST CASES
