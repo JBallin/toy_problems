@@ -25,7 +25,12 @@ Example
 For text = "The cat does not like the fire" and forbiddenWords = ["cat","fire"], the output should be "The *** does not like the ****".
 */
 
-const censorThis = (str, forbiddenWords) => {}
+const censorThis = (s, forbiddenWords) =>
+  forbiddenWords.reduce((censored, word) => {
+    let re = new RegExp(`\\b${word}\\b`, 'gi');
+    let censoredWord = "*".repeat(word.length);
+    return censored.replace(re, censoredWord);
+  }, s);
 
 console.log(censorThis("The cat does not like cat fires", ["cat", "fire", "the"]));
 
