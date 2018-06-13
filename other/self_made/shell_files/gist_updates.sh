@@ -1,4 +1,5 @@
 # write funcs/aliases to easily update commonly used gists
+# brew install gist
 
 # gist id's
 gist_bp_id=ID_HERE
