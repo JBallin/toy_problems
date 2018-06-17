@@ -1,18 +1,20 @@
 {
   "name": "change-atom-theme",
   "version": "1.0.0",
-  "description": "",
+  "description": "Quickly change atom theme (light or dark) the command line.",
   "main": "atomChangeTheme.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["atom"],
+  "keywords": [
+    "atom"
+  ],
   "author": {
-	  "name": "JBallin",
-	  "url": "https://medium.com/@PrintSupWorld"
+    "name": "JBallin",
+    "url": "https://medium.com/@PrintSupWorld"
   },
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "cson-parser": "^3.0.0"
   }
 }
