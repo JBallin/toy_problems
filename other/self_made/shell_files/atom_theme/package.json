@@ -1,13 +1,16 @@
 {
-  "name": "atom_theme",
+  "name": "change-atom-theme",
   "version": "1.0.0",
   "description": "",
   "main": "atomChangeTheme.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["atom"],
+  "author": {
+	  "name": "JBallin",
+	  "url": "https://medium.com/@PrintSupWorld"
+  },
   "license": "ISC",
   "devDependencies": {
     "cson-parser": "^3.0.0"
