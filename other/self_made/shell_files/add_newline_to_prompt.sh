@@ -6,8 +6,8 @@
 
 add_newline_to_prompt() {
   is_new_login="true"
-  INIT_PROMPT_COMMAND="$PROMPT_COMMAND"
-  DEFAULT_PROMPT_COMMAND=update_terminal_cwd
+  local INIT_PROMPT_COMMAND="$PROMPT_COMMAND"
+  local DEFAULT_PROMPT_COMMAND=update_terminal_cwd
   PROMPT_COMMAND='{
     if [ $is_new_login = "true" ]; then
       is_new_login="false"
