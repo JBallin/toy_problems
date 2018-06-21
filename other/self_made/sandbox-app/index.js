@@ -1,5 +1,9 @@
 const express = require('express');
 const app = express();
+require('knex')({
+  client: 'pg',
+  connection: 'postgres://postgres@localhost:5432/game-store'
+});
 
  app.use('/', (req, res, next) => {
 	console.log('used app!');
@@ -12,7 +16,7 @@ app.get('/', (req, res, next) => {
 
 app.post('/:id', (req, res, next) => {
 	const id = req.params.id;
-	if (id > 10) { 
+	if (id > 10) {
 		res.send(`id ${id} is out of range!`)
 	} else {
 		res.send('selected id: ' + id);
