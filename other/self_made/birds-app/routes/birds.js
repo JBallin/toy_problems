@@ -8,4 +8,6 @@ router.get('/about', () => {
   knex('birds')
   .then()
 })
-router.post('/',
+router.post('/')
+router.put('/')
+router.delete('/')
