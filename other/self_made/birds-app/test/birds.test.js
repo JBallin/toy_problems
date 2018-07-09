@@ -6,5 +6,5 @@ describe('GET /birds', () => {
     request(app)
       .get('/birds')
       .expect(200, done);
-  })
-})
+  });
+});

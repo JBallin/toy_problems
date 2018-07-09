@@ -3,10 +3,12 @@ const app = express();
 
 const birds = require('./routes/birds');
 
-app.use(express.static(__dirname + '/public'))
-
+app.use(express.static('/public'))
 app.use('/birds', birds);
 
-app.listen(3000);
+if (process.env.NODE_ENV !== 'test') {
+  const port = process.env.PORT || 3000;
+  app.listen(port, () => console.log('listening on port', port))
+}
 
 module.exports = app;
