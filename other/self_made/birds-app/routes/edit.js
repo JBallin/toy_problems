@@ -3,7 +3,11 @@ const router = express.Router();
 const knex = require('../knex')
 
 // PUT bird name/description based on form
-// TODO: Create form that's identical to submission but different HEADER and neither field is required. add edit button next to each bird in GET /birds
+/* TODO:
+  - Create form that's identical to submission but different HEADER and neither field is required
+  - Add edit button next to each bird in GET /birds
+  - updated_at should work!
+*/
 router.put('/:id', (res, req) => {
 
 })
