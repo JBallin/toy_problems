@@ -4,7 +4,7 @@ const app = express();
 const birds = require('./routes/birds');
 
 app.use(express.static('/public'))
-app.use('/birds', birds);
+app.use('/', birds);
 
 if (process.env.NODE_ENV !== 'test') {
   const port = process.env.PORT || 3000;

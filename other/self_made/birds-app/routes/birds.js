@@ -3,7 +3,8 @@ const router = express.Router();
 const knex = require('../knex')
 const path = require('path');
 
-router.get('/', (req, res) => {
+// Give form to add new bird
+router.get('/new', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'public/birds.html')));
 }
 
