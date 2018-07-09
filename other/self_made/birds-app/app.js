@@ -3,14 +3,14 @@ const app = express();
 
 // define routes
 const birds = require('./routes/birds');
-const new = require('./routes/new');
+const add = require('./routes/add');
 const about = require('./routes/about');
 const edit = require('./routes/edit');
 
 // use routes
 app.use(express.static('/public'))
 app.use('/', birds);
-app.use('/new', newBird);
+app.use('/add', add);
 app.use('/about', about);
 app.use('/edit', edit);
 
