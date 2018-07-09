@@ -3,18 +3,24 @@ const router = express.Router();
 const knex = require('../knex')
 const path = require('path');
 
-router.get('/', (req, res) => res.sendFile(path.join(__dirname, '..', 'public/birds.html')));
+router.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'public/birds.html')));
+}
 
-router.get('/about', () => {
+// Give name and description of bird with id of params.body.id
+router.get('/about/:id', () => {
   knex('birds')
   .then()
 })
 
+// Add new bird to db from form
 router.post('/')
 
-router.put('/')
+// Change bird description, add edit button next to each bird in GET /birds
+router.put('/:id')
 
-router.delete('/')
+// Delete a specific bird, add delete button next to each bird in GET /birds
+router.delete('/:id')
 
 
 module.exports = router;
