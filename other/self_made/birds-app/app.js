@@ -9,7 +9,7 @@ const edit = require('./routes/edit');
 
 // use routes
 app.use(express.static('/public'))
-app.use('/', birds);
+app.use('/birds', birds);
 app.use('/add', add);
 app.use('/about', about);
 app.use('/edit', edit);
