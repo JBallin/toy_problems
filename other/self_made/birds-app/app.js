@@ -8,7 +8,7 @@ const about = require('./routes/about');
 const edit = require('./routes/edit');
 
 // use routes
-app.use(express.static('/public'))
+app.use(express.static('public'))
 app.use('/birds', birds);
 app.use('/add', add);
 app.use('/about', about);
