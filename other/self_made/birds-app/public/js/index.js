@@ -1,5 +1,8 @@
-const bird1 = document.querySelector('#1');
-const bird2 = document.querySelector('#2');
-const bird3 = document.querySelector('#3');
+const bird1 = document.querySelector('#bird1');
+const bird2 = document.querySelector('#bird2');
+const bird3 = document.querySelector('#bird3');
 
-fetch()
+// fetch('birds')
+// .then(res => {
+//   console.log(res.body);
+// })
