@@ -10,5 +10,9 @@ router.get('/', (req, res) => {
   .catch(err => next(err))
 });
 
+router.get('/size', (req, res) => {
+  knex('birds').max('id')
+  .then(size => res.json(size[0].max));
+})
 
 module.exports = router;
