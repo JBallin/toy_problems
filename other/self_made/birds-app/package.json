@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha --exit",
     "dev": "nodemon",
-    "initDB": "knex migrate:rollback; knex migrate:latest; knex seed:run"
+    "initDB": "knex migrate:rollback; knex migrate:latest; knex seed:run",
+    "getBirds": "psql birds-app_dev -c 'SELECT * FROM birds;'"
   },
   "keywords": [],
   "author": "",
