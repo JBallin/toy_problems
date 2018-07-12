@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "mocha --exit",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "initDB": "knex migrate:rollback; knex migrate:latest; knex seed:run"
   },
   "keywords": [],
   "author": "",
