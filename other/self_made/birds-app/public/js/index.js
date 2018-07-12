@@ -12,3 +12,6 @@ fetch('birds')
   bird2.innerHTML = displayBird(2);
   bird3.innerHTML = displayBird(3);
 })
+
+let prev = document.querySelector('#prev');
+let next = document.querySelector('#next');
