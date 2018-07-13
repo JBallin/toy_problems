@@ -2,10 +2,11 @@ body {
   background-color: lightgray;
 }
 
-div {
+div.bird {
   margin: 10px 0;
   width: 200px;
   height: 75px;
+  display: inline-block;
 }
 
 h1 {
@@ -15,4 +16,8 @@ h1 {
 a {
   margin-top: 30px;
   display: block;
+}
+
+.delete {
+  margin-left: 20px;
 }
