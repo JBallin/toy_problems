@@ -11,12 +11,3 @@ describe('GET /', () => {
     .expect(200, done);
   })
 })
-
-describe('GET /birds', () => {
-  it('should return JSON', done => {
-    request(app)
-    .get('/birds')
-    .expect('Content-Type', /json/)
-    .expect(200, done)
-  })
-})
