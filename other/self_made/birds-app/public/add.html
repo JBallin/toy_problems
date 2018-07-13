@@ -1,16 +1,16 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="/css/stylesheet.css">
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Add Bird</title>
   </head>
   <body>
-    <h1>Birds are dope</h1>
-    <p>Do you like birdwatching?</p>
-    <form action="/birds" method="post">
-      <input type="text" name="birdType" placeholder="Type of Bird" required>
-      <input type="text" name="birdDescription" placeholder="Description of Bird" required>
-      <button type="submit" name="submit">Submit</button>
+    <h1>Add New Bird</h1>
+    <form action="/add" method="post">
+      <input type="text" name="type" placeholder="Type of Bird" required>
+      <input type="text" name="description" placeholder="Description of Bird" required>
+      <input type="submit" name="submit" value="Submit">
     </form>
   </body>
 </html>

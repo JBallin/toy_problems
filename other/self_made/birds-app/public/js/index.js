@@ -4,32 +4,26 @@ const bird3 = document.querySelector('#bird3');
 
 let prev = document.querySelector('#prev');
 let next = document.querySelector('#next');
-prev.style.display = 'none';
+prev.disabled = true;
 
-let start = 0;
+let start = 1;
 let step = 3;
-getBirds(start, start += step)
+getBirds(start, start += (step - 1))
 
 next.onclick = () => {
-  prev.style.display = 'inline';
-  getBirds(start, start += step);
-
-  // getSize()
-  // .then(
-  //   if (size > )
-  //   getBirds(start, stop);
-  //   start += 3;
-  // )
+  console.log('next: start', start);
+  prev.disabled = false;
+  getBirds(start, start += (step - 1));
 }
 
 prev.onclick = () => {
-  next.style.display = 'inline';
-  getBirds(start - step, start)
-  start -= step;
+  next.disabled = false;
+  start -= (step + 1)
+  getBirds(start, start += (step - 1));
 }
 
 function getBirds(min, max) {
-  fetch(`birds/${min}/${max}`)
+  fetch(`birds/range/${min}/${max}`)
   .then(res => res.json())
   .then(birds => {
     const birdFormat = (bird) => `<strong>${bird.type}</strong> <p>${bird.description}</p>`;
@@ -37,14 +31,17 @@ function getBirds(min, max) {
       let birdDiv = [bird1, bird2, bird3][n];
       let bird = birds[n];
       if (birds[n]) {
-        birdDiv.style.display = 'block';
+        birdDiv.style.border = '1px solid blue';
         birdDiv.innerHTML = birdFormat(bird);
       } else {
-        birdDiv.style.display = 'none';
+        birdDiv.style.border = '1px solid transparent';
+        birdDiv.innerHTML = '';
       }
     };
-    if (birds.length < 3) next.style.display = 'none';
-    if (max <= 3) prev.style.display = 'none';
+    getSize().then(size => {
+      if (max >= size) next.disabled = true;
+    })
+    if (max <= 3) prev.disabled = true;
 
     for (let i = 0; i < step; i++) {
       display(i);
