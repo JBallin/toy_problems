@@ -9,7 +9,6 @@ router.delete('/:id', (req, res) => {
   .returning(['id', 'type', 'description'])
   .then(removed => {
     console.log('removed:', removed[0]);
-    res.redirect('/');
   })
 })
 

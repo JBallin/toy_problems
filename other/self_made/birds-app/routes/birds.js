@@ -3,26 +3,35 @@ const router = express.Router();
 const knex = require('../knex')
 
 // GET all birds
-// TODO: Only show 3 birds at a time and fetch next 3 with ajax
 router.get('/', (req, res) => {
   knex('birds')
   .then(data => res.json(data))
   .catch(err => next(err))
 });
 
-function range(start, stop) {
-    return [...Array(stop - start + 1).keys()].map(i => i + start);
-}
-
-router.get('/range/:min/:max', (req, res) => {
-  const min = parseInt(req.params.min);
-  const max = parseInt(req.params.max);
+// GET size (num, max) birds starting from start (id)
+router.get('/get/:start/:size', (req, res) => {
+  const start = parseInt(req.params.start);
+  const size = parseInt(req.params.size);
   knex('birds')
-  .whereIn('id', range(min, max))
+  .where('id', '>=', start)
+  .limit(size)
   .then(data => res.json(data))
 })
 
-router.get('/size', (req, res) => {
+// GET size (num, max) birds starting from start (id) but go in descending order
+router.get('/get/reverse/:start/:size', (req, res) => {
+  const start = parseInt(req.params.start);
+  const size = parseInt(req.params.size);
+  knex('birds')
+  .where('id', '<=', start)
+  .orderBy('id', 'desc')
+  .limit(size)
+  .then(data => res.json(data))
+})
+
+// GET max id in birds table
+router.get('/get/max', (req, res) => {
   knex('birds').max('id')
   .then(size => res.json(size[0].max));
 })
