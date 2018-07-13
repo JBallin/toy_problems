@@ -17,8 +17,8 @@ router.post('/', bodyParser.urlencoded({extended: true}), (req, res) => {
     description: req.body.description
   })
   .returning(['id', 'type', 'description'])
-  .then((data) => {
-    console.log(data);
+  .then(added => {
+    console.log('added:', added[0]);
     res.redirect('/');
   })
 })
