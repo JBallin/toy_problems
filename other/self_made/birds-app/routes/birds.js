@@ -14,7 +14,7 @@ function range(start, stop) {
     return [...Array(stop - start + 1).keys()].map(i => i + start);
 }
 
-router.get('/:min/:max', (req, res) => {
+router.get('/range/:min/:max', (req, res) => {
   const min = parseInt(req.params.min);
   const max = parseInt(req.params.max);
   knex('birds')
