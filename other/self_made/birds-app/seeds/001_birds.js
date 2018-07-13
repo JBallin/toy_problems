@@ -13,6 +13,22 @@ exports.seed = function(knex, Promise) {
         {
           type: 'Seagull',
           description: 'Likes to eat fish'
+       },
+       {
+         type: 'Crow',
+         description: 'Bad luck!'
+       },
+       {
+         type: 'Pigeon',
+         description: 'A delicacy in asia'
+       },
+       {
+         type: 'Parrot',
+         description: 'Smartest bird?'
+       },
+       {
+         type: 'Hummingbird',
+         description: 'Flaps its wings fast!'
        }
       ]);
     });
