@@ -1,0 +1,15 @@
+div {
+  margin-bottom: 10px;
+}
+
+h1 {
+  color: red;
+}
+
+input[type=submit] {
+  color: blue;
+}
+
+#container {
+  margin-top: 20px;
+}
