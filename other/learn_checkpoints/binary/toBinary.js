@@ -1,4 +1,4 @@
-const toBin = (n) => {
+const toBinary = (n) => {
   let bin = '';
   let remain = n;
   while (remain > 0) {
@@ -8,4 +8,4 @@ const toBin = (n) => {
   return bin;
 };
 
-module.exports = toBin;
+module.exports = toBinary;
