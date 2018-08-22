@@ -32,6 +32,4 @@ const censorThis = (s, forbiddenWords) =>
     return censored.replace(re, censoredWord);
   }, s);
 
-console.log(censorThis("The cat does not like cat fires", ["cat", "fire", "the"]));
-
 module.exports = censorThis;
