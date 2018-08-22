@@ -14,7 +14,7 @@
 const toBinary = require('./toBinary');
 const toDecimal = require('./toDecimal');
 
-const killKthBit = (n, k) => {
+const killKthBit1 = (n, k) => {
   // convert n to binary
   const bin = toBinary(n);
   // split binary into array
@@ -29,4 +29,19 @@ const killKthBit = (n, k) => {
   return newDec;
 };
 
-module.exports = killKthBit;
+const killKthBit = (n, k) => {
+  // convert n to binary
+  const bin = n.toString(2);
+  // split binary into array
+  const binArr = bin.split('');
+  // make kth bit '0'
+  binArr[binArr.length - k] = 0;
+  // join binary array back to string
+  const newBin = binArr.join('');
+  // convert binary back to decimal
+  const newDec = parseInt(newBin, 2);
+  // return decimal
+  return newDec;
+};
+
+module.exports = { killKthBit, killKthBit1 };

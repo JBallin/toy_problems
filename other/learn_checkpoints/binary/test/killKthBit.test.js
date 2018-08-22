@@ -1,5 +1,5 @@
 const { assert } = require('chai');
-const killKthBit = require('../killKthBit');
+const { killKthBit } = require('../killKthBit');
 
 describe('killKthBit', () => {
   it('should return a number', () => {
