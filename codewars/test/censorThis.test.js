@@ -1,5 +1,5 @@
 const assertEquals = require('chai').assert.equal;
-const censorThis = require("../codewars/6kyu/censorThis.js");
+const censorThis = require("../6kyu/censorThis.js");
 
 describe("censorThis", function() {
   it("It should work for basic tests", function() {
