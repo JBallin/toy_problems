@@ -13,4 +13,6 @@ const factorialRecursive = (n) => {
   return n * factorialRecursive(n - 1);
 };
 
-module.exports = { factorialIterative, factorialRecursive };
+const factorialRecursive1 = n => (n === 1 ? 1 : n * factorialRecursive1(n - 1));
+
+module.exports = { factorialIterative, factorialRecursive, factorialRecursive1 };
