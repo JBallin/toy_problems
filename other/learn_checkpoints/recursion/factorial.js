@@ -1,3 +1,4 @@
+// return factorial
 
 const factorialIterative = (n) => {
   let result = 1;
