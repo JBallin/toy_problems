@@ -14,7 +14,7 @@ describe('merge', () => {
       assert.lengthOf(mergeI(arr1, arr2), arr1.length + arr2.length);
     });
     it('should return a merged and sorted array', () => {
-      assert.equal(mergeI(arr1, arr2), expected);
+      assert.deepEqual(mergeI(arr1, arr2), expected);
     });
   });
 
@@ -26,7 +26,7 @@ describe('merge', () => {
       assert.lengthOf(mergeR(arr1, arr2), arr1.length + arr2.length);
     });
     it('should return a merged and sorted array', () => {
-      assert.equal(mergeR(arr1, arr2), expected);
+      assert.deepEqual(mergeR(arr1, arr2), expected);
     });
   });
 });
