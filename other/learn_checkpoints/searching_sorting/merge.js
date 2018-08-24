@@ -41,7 +41,21 @@ function mergeI(arr1, arr2) {
 }
 
 function mergeR(arr1, arr2) {
-  return arr1 + arr2;
+  // return other array if one is empty
+  if (!arr1.length) return arr2;
+  if (!arr2.length) return arr1;
+
+  let min;
+  let merged;
+  let sliced;
+  if (arr1[0] < arr2[0]) {
+    [min, ...sliced] = arr1;
+    merged = mergeR(sliced, arr2);
+  } else {
+    [min, ...sliced] = arr2;
+    merged = mergeR(arr1, sliced);
+  }
+  return [min, ...merged];
 }
 
 module.exports = { mergeI, mergeR };
