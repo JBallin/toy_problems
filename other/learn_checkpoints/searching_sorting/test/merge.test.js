@@ -1,5 +1,5 @@
 const { assert } = require('chai');
-const { mergeI, mergeR } = require('../merge');
+const { mergeI, mergeR } = require('../js/merge');
 
 describe('merge', () => {
   const arr1 = [0, 2, 4];
