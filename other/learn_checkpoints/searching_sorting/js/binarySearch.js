@@ -21,3 +21,13 @@ const binarySearchI = (arr, n) => {
   return -1;
 };
 
+const binarySearchR = (arr, n, lo = 0, hi = arr.length - 1) => {
+  if (lo > hi) return -1;
+
+  const mid = Math.floor(lo + (hi - lo) / 2);
+  if (arr[mid] === n) return mid;
+  if (arr[mid] < n) return binarySearchR(arr, n, mid + 1, hi);
+  return binarySearchR(arr, n, lo, mid - 1);
+};
+
+module.exports = { binarySearchI, binarySearchR };
