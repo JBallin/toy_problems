@@ -17,7 +17,7 @@ describe('linearSearch', () => {
     });
     it('should return index of first occurence of n', () => {
       assert.equal(validActual, expectedValid);
-    })
+    });
     it('should return -1 if n not in array', () => {
       assert.equal(invalidActual, -1);
     });
@@ -33,7 +33,7 @@ describe('linearSearch', () => {
     });
     it('should return index of first occurence of n', () => {
       assert.equal(validActual, expectedValid);
-    })
+    });
     it('should return -1 if n not in array', () => {
       assert.equal(invalidActual, -1);
     });
