@@ -1,5 +1,5 @@
 const { assert } = require('chai');
-const { swap } = require('../js/sort-helpers');
+const { swap, getMinI } = require('../js/sort-helpers');
 
 describe('sort-helpers', () => {
   let a;
@@ -18,6 +18,12 @@ describe('sort-helpers', () => {
     });
     it('should not modify original array', () => {
       assert.notDeepEqual(swap(a, 2, 0), original);
+    });
+  });
+
+  describe('getMinI', () => {
+    it('should return min index', () => {
+      assert.equal(getMinI([7, 100, 2, 5, 4], 3), 4);
     });
   });
 });
