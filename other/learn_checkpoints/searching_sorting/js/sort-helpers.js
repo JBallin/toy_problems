@@ -4,7 +4,7 @@ const swap = (a, i, j) => {
   return r;
 };
 
-const getMinI = (arr, start) => {
+const getMinI = (arr, start = 0) => {
   let minI = start;
   for (let i = start + 1; i < arr.length; i += 1) {
     if (arr[i] < arr[minI]) minI = i;
