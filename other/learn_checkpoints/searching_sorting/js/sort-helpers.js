@@ -10,6 +10,6 @@ const getMinI = (arr, start) => {
     if (arr[i] < arr[minI]) minI = i;
   }
   return minI;
-}
+};
 
 module.exports = { swap, getMinI };
