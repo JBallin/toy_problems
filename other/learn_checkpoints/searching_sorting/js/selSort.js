@@ -9,6 +9,14 @@ const selSortI = (arr) => {
   return res;
 };
 
-const selSortR = arr => arr;
+const selSortR = (arr) => {
+  if (arr.length < 2) return arr;
+
+  let res = arr.slice();
+  const minI = getMinI(res);
+  if (minI !== 0) res = swap(res, 0, minI);
+
+  return res.splice(0, 1).concat(selSortR(res));
+};
 
 module.exports = { selSortI, selSortR };
