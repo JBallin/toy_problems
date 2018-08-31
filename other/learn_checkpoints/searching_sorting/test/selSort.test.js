@@ -1,14 +1,10 @@
 const { assert } = require('chai');
 const { selSortI, selSortR } = require('../js/selSort');
 
-describe('merge sort', () => {
-  let a;
+describe('selection sort', () => {
   const original = [4, 2, 9, 1, 7];
   const sorted = [1, 2, 4, 7, 9];
-
-  beforeEach(() => {
-    a = original.slice();
-  });
+  const a = original.slice();
 
   describe('iterative', () => {
     const result = selSortI(a);
