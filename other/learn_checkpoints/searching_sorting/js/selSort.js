@@ -1,12 +1,9 @@
-const { swap } = require('./sort-helpers');
+const { swap, getMinI } = require('./sort-helpers');
 
 const selSortI = (arr) => {
   let res = arr.slice();
   for (let i = 0; i < res.length; i += 1) {
-    let minI = i;
-    for (let j = i + 1; j < res.length; j += 1) {
-      if (res[j] < res[minI]) minI = j;
-    }
+    let minI = getMinI(res, i);
     if (minI !== i) res = swap(res, i, minI);
   }
   return res;
