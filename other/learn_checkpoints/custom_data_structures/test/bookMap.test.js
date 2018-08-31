@@ -1,5 +1,5 @@
 const { assert } = require('chai');
-const { BookMap } = require('../BookMap');
+const { BookMap } = require('../js/BookMap');
 
 describe('BookMap', () => {
   const bookMap = new BookMap();
