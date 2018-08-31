@@ -38,7 +38,7 @@ describe('merge sort', () => {
       assert.notEqual(mergeSortR(a), original);
     });
     it('should return an empty array if input array is empty', () => {
-      assert.deepEqual(mergeSortI([]), []);
+      assert.deepEqual(mergeSortR([]), []);
     });
   });
 });
