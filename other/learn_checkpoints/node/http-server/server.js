@@ -1,30 +1,27 @@
 const http = require('http');
 const fs = require('fs');
 
+const homePage = fs.readFileSync('./index.html');
+const aboutPage = fs.readFileSync('./pages/about.html');
+const faqPage = fs.readFileSync('./pages/FAQ.html');
+const notFoundPage = fs.readFileSync('./pages/404.html');
+
 function handleRequest(req, res) {
   res.setHeader('Content-Type', 'text/html');
   res.statusCode = 200;
   switch (req.url) {
-    case '/': {
-      const homePage = fs.readFileSync('./index.html');
+    case '/':
       res.write(homePage);
       break;
-    }
-    case '/about.html': {
-      const aboutPage = fs.readFileSync('./pages/about.html');
+    case '/about.html':
       res.write(aboutPage);
       break;
-    }
-    case '/FAQ.html': {
-      const faqPage = fs.readFileSync('./pages/FAQ.html');
+    case '/FAQ.html':
       res.write(faqPage);
       break;
-    }
-    default: {
-      const notFoundPage = fs.readFileSync('./pages/404.html');
+    default:
       res.write(notFoundPage);
       res.statusCode = 404;
-    }
   }
   const links = fs.readFileSync('./pages/links.html');
   res.write(links);
