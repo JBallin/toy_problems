@@ -33,3 +33,11 @@ function handleRequest(req, res) {
 
 const server = http.createServer(handleRequest);
 server.listen(8000);
+
+function handleRequest2(req, res) {
+  res.write('You found the easter egg!');
+  res.end();
+}
+
+const server2 = http.createServer(handleRequest2);
+server2.listen(1337);
