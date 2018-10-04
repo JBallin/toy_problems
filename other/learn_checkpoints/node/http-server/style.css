@@ -1,0 +1,21 @@
+h1 {
+  color: green;
+}
+
+body {
+  background: beige;
+}
+
+p {
+  color: gray;
+}
+
+a {
+  font-size: 12px;
+}
+
+#links {
+  border: black solid 2px;
+  display: inline;
+  margin: auto;
+}
