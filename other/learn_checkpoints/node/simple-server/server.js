@@ -7,18 +7,23 @@ const port = 8080;
 const helloPath = path.resolve('hello.html');
 
 const handleRequest = (req, res) => {
-	const {pathname} = url.parse(req.url);
-	res.setHeader('Content-Type', 'text/html');
-	if (pathname === '/hello') {
-		const helloPage = fs.readFileSync(helloPath, 'utf-8');
-		res.end(helloPage);
-	} else {
-		res.end(`<p>${pathname}</p>`);
-	}
+  res.setHeader('Content-Type', 'text/html');
+
+  const newUrl = url.parse(req.url);
+  const { query, pathname } = newUrl;
+
+  res.write(`<p>Pathname: ${pathname}</p>`);
+  if (query) res.write(`<p>Query: ${query}</p>`);
+  if (pathname === '/hello') {
+    const helloPage = fs.readFileSync(helloPath, 'utf-8');
+    res.write(helloPage);
+  }
+
+  res.end('<a href="/">Home</a>');
 };
 const listener = () => {
-	console.log('listening on port', port);
-}
+  console.log('listening on port', port);
+};
 
 const server = http.createServer(handleRequest);
 server.listen(port, listener);
