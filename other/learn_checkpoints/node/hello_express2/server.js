@@ -7,18 +7,12 @@ const port = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 
+const indexRouter = require('./routes/index');
 const signupRouter = require('./routes/signup');
+const helloRouter = require('./routes/hello');
 
-app.get('/', (req, res) => {
-  res.render('index', { header: 'Best Site Ever', text: 'Welcome!' });
-});
-
+app.use('/', indexRouter);
 app.use('/signup', signupRouter);
-
-app.get('/:name', (req, res) => {
-  const { name } = req.params;
-  const { msg1, msg2 } = req.query;
-  res.send(`Hello ${name}! ${msg1 || ''} ${msg2 || ''}`);
-});
+app.use('/hello', helloRouter);
 
 app.listen(port, () => console.log('listening on port', port));
