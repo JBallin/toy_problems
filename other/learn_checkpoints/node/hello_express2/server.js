@@ -9,5 +9,6 @@ app.listen(port, () => console.log('listening on port', port));
 
 app.get('/:name', (req, res) => {
   const { name } = req.params;
-  res.send(`Hello ${name}!`);
+  const { msg1, msg2 } = req.query;
+  res.send(`Hello ${name}! ${msg1 || ''} ${msg2 || ''}`);
 });
