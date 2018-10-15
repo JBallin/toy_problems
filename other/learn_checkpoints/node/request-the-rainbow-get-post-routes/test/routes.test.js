@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const app = require('../app')
 const chai = require('chai')
 const expect = chai.expect
