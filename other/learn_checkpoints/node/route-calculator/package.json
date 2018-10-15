@@ -1,0 +1,28 @@
+{
+  "name": "route-calculator",
+  "version": "1.0.0",
+  "description": "We're going to create a server that acts as a calculator via routes! For example:",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JBallin/route-calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JBallin/route-calculator/issues"
+  },
+  "homepage": "https://github.com/JBallin/route-calculator#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
