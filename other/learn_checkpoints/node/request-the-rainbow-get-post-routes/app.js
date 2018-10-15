@@ -3,10 +3,6 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
-const bodyParser = require('body-parser');
-
-app.use(bodyParser.json());
-
 app.get('/red', (req, res) => res.send({ color: 'red' }));
 app.get('/yellow', (req, res) => res.send({ color: 'yellow' }));
 app.get('/blue', (req, res) => res.send({ color: 'blue' }));
