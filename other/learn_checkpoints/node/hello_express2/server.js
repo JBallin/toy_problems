@@ -7,6 +7,10 @@ const port = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 
+const displayCycle = require('./middleware/displayCycle');
+
+app.use(displayCycle);
+
 const indexRouter = require('./routes/index');
 const signupRouter = require('./routes/signup');
 const helloRouter = require('./routes/hello');
