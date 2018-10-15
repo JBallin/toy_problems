@@ -14,4 +14,9 @@ app.use((req, res) => {
   res.status(404).send('Not Found');
 });
 
+// eslint-disable-next-line no-unused-vars
+app.use((err, req, res, next) => {
+  res.status(500).send(err);
+});
+
 app.listen(port, () => console.log(`listening on port ${port}`)); // eslint-disable-line no-console
