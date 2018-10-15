@@ -3,14 +3,19 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.get('/red', (req, res) => res.send({ color: 'red' }));
-app.get('/yellow', (req, res) => res.send({ color: 'yellow' }));
-app.get('/blue', (req, res) => res.send({ color: 'blue' }));
-app.get('/violet', (req, res) => res.send({ color: 'violet' }));
-app.post('/orange', (req, res) => res.send({ color: 'orange' }));
-app.post('/green', (req, res) => res.send({ color: 'green' }));
-app.post('/indigo', (req, res) => res.send({ color: 'indigo' }));
-app.post('/red', (req, res) => res.send({ color: 'red' }));
+const gets = ['red', 'yellow', 'blue', 'violet'];
+gets.forEach((color) => {
+  app.get(`/${color}`, (req, res) => {
+    res.send({ color });
+  });
+});
+
+const posts = ['orange', 'green', 'indigo', 'red'];
+posts.forEach((color) => {
+  app.post(`/${color}`, (req, res) => {
+    res.send({ color });
+  });
+});
 
 app.use((err, req, res) => {
   const status = err.status || 500;
