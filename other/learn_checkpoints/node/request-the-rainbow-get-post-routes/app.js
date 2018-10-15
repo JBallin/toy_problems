@@ -17,7 +17,8 @@ posts.forEach((color) => {
   });
 });
 
-app.use((req, res, err) => {
+// eslint-disable-next-line no-unused-vars
+app.use((err, req, res, next) => {
   const status = err.status || 500;
   res.status(status).json({ error: err });
 });
