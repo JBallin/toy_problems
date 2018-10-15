@@ -17,7 +17,7 @@ posts.forEach((color) => {
   });
 });
 
-app.use((err, req, res) => {
+app.use((req, res, err) => {
   const status = err.status || 500;
   res.status(status).json({ error: err });
 });
