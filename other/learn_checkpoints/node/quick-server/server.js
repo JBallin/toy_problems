@@ -10,4 +10,8 @@ const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => res.json({ data: [1, 2, 3] }));
 
+app.use((req, res) => {
+  res.status(404).send('Not Found');
+});
+
 app.listen(port, () => console.log(`listening on port ${port}`)); // eslint-disable-line no-console
