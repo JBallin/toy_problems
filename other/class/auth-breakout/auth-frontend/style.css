@@ -1,0 +1,13 @@
+#failure-message {
+  display: none;
+  margin-top: 1em;
+}
+
+#success-message {
+  display: none;
+  margin-top: 1em;
+}
+
+.the-form {
+  margin-top: 5em
+}
