@@ -32,3 +32,8 @@ function root(x, n) {
 
   return Number(mid.toFixed(3));
 }
+
+/*
+TIME: O(log(x))
+SPACE: O(1)
+*/
